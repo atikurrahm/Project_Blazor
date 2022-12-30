@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "G:\\Cs_.Net\\M_10_Blazor\\Project_Blazor\\Project_Blazor\\Server\\wwwroot\\Uploads\\253tmbgq.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\253tmbgq.jpg"
+    },
+    {
+      "Id": "G:\\Cs_.Net\\M_10_Blazor\\Project_Blazor\\Project_Blazor\\Server\\wwwroot\\Uploads\\bvghax4o.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\bvghax4o.jpg"
+    },
+    {
+      "Id": "G:\\Cs_.Net\\M_10_Blazor\\Project_Blazor\\Project_Blazor\\Server\\wwwroot\\Uploads\\heeamh3d.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\heeamh3d.jpg"
+    },
+    {
+      "Id": "G:\\Cs_.Net\\M_10_Blazor\\Project_Blazor\\Project_Blazor\\Server\\wwwroot\\Uploads\\isxjra04.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\isxjra04.jpg"
+    },
+    {
+      "Id": "G:\\Cs_.Net\\M_10_Blazor\\Project_Blazor\\Project_Blazor\\Server\\wwwroot\\Uploads\\zkkmoagt.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\zkkmoagt.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Project_Blazor.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Project_Blazor.Server.props",
+      "PackagePath": "build\\Project_Blazor.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Project_Blazor.Server.props",
+      "PackagePath": "buildMultiTargeting\\Project_Blazor.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Project_Blazor.Server.props",
+      "PackagePath": "buildTransitive\\Project_Blazor.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

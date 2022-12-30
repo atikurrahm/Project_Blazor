@@ -1,0 +1,61 @@
+﻿@page "/Workers/List"
+
+@inject HttpClient http
+@inject IConfiguration config
+<div class="row">
+    <div class="col-12">
+        <div class="d-flex justify-content-end mb-1">
+            <NavLink class="btn btn-primary btn-sm" href="/Workers/Create">Create New</NavLink>
+        </div>
+        @if (workers is null)
+        {
+            <div>Loading</div>
+        }
+        else if (workers.Length == 0)
+        {
+            <div class="alert alert-warning" role="alert">
+                No employee record found!
+            </div>
+        }
+        else
+        {
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th></th>
+                        <th>WorkerName</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Payrate</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var emp in workers)
+                    {
+                        <tr>
+                            <td><img style="width:40px" src="/Uploads/@emp.Picture" class="rounded-circle" /></td>
+                            <td>@emp.WorkerName</td>
+                            <td>@emp.Gender</td>
+                            <td>@emp.Phone</td>
+                            <td>@emp.Payrate</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm" href="/Workers/Edit/@emp.WorkerId">Edit</a>
+                                <a class="btn btn-danger btn-sm" href="/Workers/Delete/@emp.WorkerId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+@code {
+    private WorkerDTO[]? workers;
+    protected override async Task OnInitializedAsync()
+    {
+        this.workers = await this.http.GetFromJsonAsync<WorkerDTO[]>("api/Workers");
+    }
+
+}

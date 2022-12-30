@@ -1,0 +1,77 @@
+﻿@page "/Payments/Details/{id:int}"
+@inject HttpClient http
+
+<div class="row">
+    <div class="row">
+        <h3>Payment Details</h3>
+        @if (payment is null)
+        {
+            <div>Loading...</div>
+        }
+        else
+        {
+            <div class="row mb-1">
+                <label class="col-2 text-end">Start Date</label>
+                <div class="col-10">
+                    @payment.StartDate.ToString("yyyy-MM-dd")
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="col-2 text-end">Customer</label>
+                <div class="col-10">
+                    @payment.CustomerName
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="col-2 text-end">End Date</label>
+                <div class="col-10">
+                    @payment.EndDate.ToString("yyyy-MM-dd")
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label class="col-2 text-end">Payment Done?</label>
+                <div class="col-10">
+                    @payment.PaymentDone
+                </div>
+            </div>
+            @if (works is not null)
+            {
+                <div><h4>Works</h4></div>
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Worker</th>
+                            <th>Total Work Hours</th>
+                            <th>total Pay</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var oi in works)
+                        {
+                            <tr>
+                                <td>@oi.WorkerName</td>
+                                <td>@oi.TotalWorkHour</td>
+                                <td>@((oi.Payrate * oi.TotalWorkHour).ToString("0.00"))</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    private PaymentViewDTO? payment;
+    private WorkViewDTO[]? works;
+    protected override async Task OnInitializedAsync()
+    {
+        payment = await http.GetFromJsonAsync<PaymentViewDTO>($"api/Payments/DTO/{id}");
+        if (payment is not null)
+        {
+            works = await http.GetFromJsonAsync<WorkViewDTO[]>($"api/Payments/Works/{id}");
+        }
+    }
+}

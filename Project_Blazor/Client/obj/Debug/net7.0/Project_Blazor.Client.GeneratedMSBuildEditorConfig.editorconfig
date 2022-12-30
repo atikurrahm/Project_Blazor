@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Project_Blazor.Client
+build_property.RootNamespace = Project_Blazor.Client
+build_property.ProjectDir = G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Client\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Components/ModalDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNb2RhbERpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Customers/ComponentList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXENvbXBvbmVudExpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Customers/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Customers/Delete.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXERlbGV0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Customers/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzXEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Payment/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudFxDcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Payment/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudFxEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Payment/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudFxFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Payment/PaymentList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudFxQYXltZW50TGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Workers/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya2Vyc1xDcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Workers/Delete.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya2Vyc1xEZWxldGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Workers/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya2Vyc1xFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Workers/WorkerList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV29ya2Vyc1xXb3JrZXJMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Cs_.Net/M_10_Blazor/Project_Blazor/Project_Blazor/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-z5587ortug

@@ -1,0 +1,42 @@
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.deps.json
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.runtimeconfig.json
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.dll
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.pdb
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.csproj.AssemblyReference.cache
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.AssemblyInfoInputs.cache
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.AssemblyInfo.cs
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.csproj.CoreCompileInputs.cache
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.dll
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\refint\Project_Blazor.Shared.dll
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.pdb
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.genruntimeconfig.cache
+G:\Cs_.Net\M_10_Blazor\HW\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\ref\Project_Blazor.Shared.dll
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.deps.json
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.runtimeconfig.json
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.dll
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.pdb
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.csproj.AssemblyReference.cache
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.AssemblyInfoInputs.cache
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.AssemblyInfo.cs
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.csproj.CoreCompileInputs.cache
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.dll
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\refint\Project_Blazor.Shared.dll
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.pdb
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.genruntimeconfig.cache
+E:\1268952 REYAD R50\Module-10\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\ref\Project_Blazor.Shared.dll
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.deps.json
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.runtimeconfig.json
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.dll
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\bin\Debug\net7.0\Project_Blazor.Shared.pdb
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.csproj.AssemblyReference.cache
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.GeneratedMSBuildEditorConfig.editorconfig
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.AssemblyInfoInputs.cache
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.AssemblyInfo.cs
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.csproj.CoreCompileInputs.cache
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.dll
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\refint\Project_Blazor.Shared.dll
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.pdb
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\Project_Blazor.Shared.genruntimeconfig.cache
+G:\Cs_.Net\M_10_Blazor\Project_Blazor\Project_Blazor\Shared\obj\Debug\net7.0\ref\Project_Blazor.Shared.dll

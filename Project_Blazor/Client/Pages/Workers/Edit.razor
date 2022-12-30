@@ -1,0 +1,150 @@
+﻿@page "/Workers/Edit/{id:int}"
+@using System.Net.Http.Headers;
+
+@inject IToastService toastService
+@inject HttpClient http;
+@inject NavigationManager navManager
+
+@if(worker is null)
+{
+    <div>Loading..</div>
+}
+else
+{
+    <div class="row">
+        <div class="col-12">
+            <EditForm Model="@worker" OnValidSubmit="SaveAsync">
+                <DataAnnotationsValidator />
+                <div class="form-group row mb-1">
+                    <label for="@worker.WorkerName" class="col-form-label col-form-label-sm col-2 text-end">Name</label>
+                    <div class="col-4">
+                        <InputText @bind-Value="worker.WorkerName" class="form-control form-control-sm" />
+                        <ValidationMessage For="@(()=> worker.WorkerName)" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label for="@worker.Gender" class="col-form-label col-form-label-sm col-2 text-end">Gender</label>
+                    <div class="col-4">
+                        <InputSelect @bind-Value="worker.Gender" class="form-select form-select-sm">
+                            <option value="0">Select</option>
+                            @if (genderNames is not null)
+                            {
+                                @for (var i = 0; i < genderNames.Length; i++)
+                                {
+                                    <option value="@genderNames[i]">@genderNames[i]</option>
+                                }
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="@(()=> worker.Gender)" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label for="@worker" class="col-form-label col-form-label-sm col-2 text-end">Phone</label>
+                    <div class="col-4">
+                        <InputText @bind-Value="worker.Phone" class="form-control form-control-sm" />
+                        <ValidationMessage For="@(()=> worker.Phone)" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label for="@worker" class="col-form-label col-form-label-sm col-2 text-end">Payrate</label>
+                    <div class="col-4">
+                        <InputNumber @bind-Value="worker.Payrate" class="form-control form-control-sm" />
+                        <ValidationMessage For="@(()=> worker.Payrate)" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+                    <label for="@worker.Picture" class="col-form-label col-form-label-sm col-2 text-end">Picture</label>
+                    <div class="col-4">
+                        <InputFile OnChange="@OnInputFileChange" class="form-control form-control-sm" />
+                        <input type="hidden" @bind="worker.Picture" class="form-control form-control-sm" />
+                        <ValidationMessage For="@(()=> worker.Picture)" class="text-danger" />
+                    </div>
+                </div>
+                <div class="form-group row mb-1">
+
+                    <div class="col-4 offset-2">
+                        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+        <div class="col-3">
+            <img src="Uploads/@worker.Picture" class="img-thumbnail" />
+        </div>
+    </div>
+}
+@code {
+    [Parameter]
+    public int id { get; set; }
+    WorkerEdit worker = null!;
+    string[]? genderNames;
+    IBrowserFile? selectedFile;
+    string? fileSelectMessage;
+    IJSObjectReference module = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        genderNames = Enum.GetNames(typeof(Gender));
+        //this.StateHasChanged();
+        var data = await http.GetFromJsonAsync<WorkerEdit>($"api/Workers/{id}");
+        if (data is not null)
+        {
+            worker = data;
+        }
+    }
+
+    private void OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        selectedFile = e.File;
+
+        fileSelectMessage = null;
+        //this.StateHasChanged();
+    }
+    private async Task SaveAsync()
+    {
+
+        if (worker is not null)
+        {
+            if (selectedFile is not null)
+            {
+                var saveImage = await UploadItAsysnc();
+                worker.Picture = saveImage.StoredFileName;
+            }
+            
+        }
+        var response = await http.PutAsJsonAsync($"api/Workers/{id}", worker);
+        if (response.IsSuccessStatusCode)
+        {
+            toastService.ShowSuccess("Data updated successfully", "Success");
+        }
+        else
+        {
+            toastService.ShowError("Failed to update data.", "Error");
+        }
+
+
+    }
+    private async Task<ImageUploadResponse> UploadItAsysnc()
+    {
+        using (var ms = new MemoryStream())
+        {
+
+            if (selectedFile is not null)
+            {
+                var content = new MultipartFormDataContent();
+                var fileContent = new StreamContent(selectedFile.OpenReadStream(long.MaxValue));
+
+                fileContent.Headers.ContentType = new MediaTypeHeaderValue(selectedFile.ContentType);
+                content.Add(content: fileContent, name: "\"file\"", fileName: selectedFile.Name);
+                var response = await http.PostAsync("api/Workers/Upload", content);
+                var r = await response.Content.ReadFromJsonAsync<ImageUploadResponse>();
+                return r == null ? new ImageUploadResponse() : r;
+            }
+            else
+            {
+                return new ImageUploadResponse();
+            }
+
+        }
+    }
+}

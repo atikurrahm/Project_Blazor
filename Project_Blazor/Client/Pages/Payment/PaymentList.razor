@@ -1,0 +1,59 @@
+﻿@page "/Payments/List"
+
+
+<div class="row">
+    <div class="col-12">
+        <h3>Payments</h3>
+        <div class="d-flex justify-content-end mb-1">
+            <a class="btn btn-primary btn-sm" href="/Payments/Create">Create New</a>
+        </div>
+        @if (payments is null)
+        {
+            <div>Loading..</div>
+        }
+        else
+        {
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>payment Done?</th>
+                        <th>TotalWork</th>
+                        <th>Total Payment</th>
+                        <th>Details</th>
+                        <th>...</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var o in payments)
+                    {
+                        <tr>
+                            <td>@o.StartDate.ToString("yyyy-MM-dd")</td>
+                            <td>@o.CustomerName</td>
+                            <td>@o.EndDate.ToString("yyyy-MM-dd")</td>
+                            <td>@o.PaymentDone</td>
+                            <td>@o.TotalWorker</td>
+                            <td>@o.TotalPayment.ToString("0.00")</td>
+                            <td>
+                                <a class="btn btn-link" href="/Payments/Details/@o.PaymentId">Details</a>
+                            </td>
+                            <td>
+
+                                <a class="btn btn-primary btn-sm" href="/Payments/Edit/@o.PaymentId">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+@inject HttpClient http
+@code {
+    private PaymentViewDTO[]? payments;
+    protected override async Task OnInitializedAsync()
+    {
+        payments = await http.GetFromJsonAsync<PaymentViewDTO[]>("api/Payments/DTO");
+    }
+}

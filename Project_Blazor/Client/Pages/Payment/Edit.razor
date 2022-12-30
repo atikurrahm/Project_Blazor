@@ -1,0 +1,146 @@
+﻿@page "/Payments/Edit/{id:int}"
+@inject HttpClient http
+@inject IToastService toastService
+
+<div class="row">
+    <div class="col-12">
+        <EditForm Model="@payment" OnValidSubmit="SavePayment">
+            <h3>Edit Payment</h3>
+            <DataAnnotationsValidator />
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2 text-end" for="@payment.CustomerID">Customer</label>
+                <div class="col-7">
+                    <InputSelect @bind-Value="payment.CustomerID" class="form-select">
+                        <option value="">Select</option>
+                        @if (customers is not null)
+                        {
+                            foreach (var c in customers)
+                            {
+                                <option value="@c.CustomerID">@c.CustomerName</option>
+                            }
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="@(()=>payment.CustomerID)" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2 text-end" for="@payment.StartDate">Start date</label>
+                <div class="col-7">
+                    <InputDate Type="InputDateType.Date" @bind-Value="@payment.StartDate" class="form-control" />
+                    <ValidationMessage For="@(()=>payment.StartDate)" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-form-label col-2 text-end" for="@payment.EndDate">End date</label>
+                <div class="col-7">
+                    <InputDate Type="InputDateType.Date" @bind-Value="@payment.EndDate" class="form-control" />
+                    <ValidationMessage For="@(()=>payment.EndDate)" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label for="@payment.PaymentDone" class="col-form-label col-form-label-sm col-2 text-end">Is Continuing</label>
+                <div class="col-4 pt-1">
+                    <InputCheckbox @bind-Value="@payment.PaymentDone" />
+
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+
+                <div class="col-9">
+                    <div class="d-flex justify-content-between">
+                        <h4>Items</h4> <button @onclick="@AddItem" type="button" class="btn btn-primary btn-sm m-1"><i class="bi bi-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            @foreach (var oi in payment.Works)
+            {
+                int i = 0;
+                <div class="form-group row mb-1">
+                    <label class="col-form-label col-1 text-end" for="@payment.CustomerID">Product</label>
+                    <div class="col-3">
+                        <InputSelect @bind-Value="oi.WorkerId" class="form-select">
+                            <option value="">Select</option>
+                            @if (workers is not null)
+                            {
+                                foreach (var p in workers)
+                                {
+                                    <option value="@p.WorkerId">@p.WorkerName</option>
+                                }
+                            }
+                        </InputSelect>
+                        <ValidationMessage For="@(()=>oi.WorkerId)" class="text-danger" />
+                    </div>
+                    <label class="col-form-label col-1 text-end" for="@oi.TotalWorkHour">Total Work Hours</label>
+                    <div class="col-3">
+                        <InputNumber @bind-Value="oi.TotalWorkHour" class="form-control" />
+
+                        <ValidationMessage For="@(()=>oi.TotalWorkHour)" class="text-danger" />
+                    </div>
+                    <div class="col-1">
+                        <button @onclick="@(()=>RemoveItem(i++))" type="button" class="btn btn-secondary btn-sm">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            }
+            <div class="form-group row mb-1">
+
+                <div class="col-9">
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Save the order</button>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    private PaymentEditDTO? payment = new();
+    private Customer[]? customers;
+    private Worker[]? workers;
+    protected override async Task OnInitializedAsync()
+    {
+        customers = await http.GetFromJsonAsync<Customer[]>("api/Customers");
+        workers = await http.GetFromJsonAsync<Worker[]>("api/Workers");
+        payment = await http.GetFromJsonAsync<PaymentEditDTO>($"api/Payments/{id}");
+        if (payment is not null)
+        {
+            Work[]? data = await http.GetFromJsonAsync<Work[]>($"api/Payments/OI/{id}");
+            if (data is not null)
+            {
+                foreach (var oi in data)
+                {
+                    payment.Works.Add(new WorkEditDTO { PaymentId = oi.PaymentId, WorkerId = oi.WorkerId, TotalWorkHour = oi.TotalWorkHour, Payrate = 0 });
+                }
+            }
+        }
+    }
+    private void AddItem()
+    {
+        payment?.Works.Add(new WorkEditDTO());
+    }
+    private void RemoveItem(int index)
+    {
+        if (payment is not null && payment.Works.Count > 1)
+            ((List<WorkEditDTO>)payment.Works).RemoveAt(index);
+    }
+    private async Task SavePayment()
+    {
+        var response = await http.PutAsJsonAsync($"api/Payments/DTO/{id}", payment);
+        if (response.IsSuccessStatusCode)
+        {
+            toastService.ShowSuccess("Data saved successfully", "Success");
+
+
+        }
+        else
+        {
+            toastService.ShowError("Failed to data.", "Error");
+        }
+        await Task.CompletedTask;
+    }
+}
